@@ -40,12 +40,7 @@ Overview:
 - save all photos or media to the acc
 - comments , likes , dislikes
 
-Project phases:
 
-1. chats
-2. media posts
-3. confessions
-4. smash or pass
 
 
 

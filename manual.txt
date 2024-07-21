@@ -1,0 +1,39 @@
+Conventions:
+
+version numbering convention:
+-format 1-1-1
+1-1-1 stands for verions 1 - phase 1 - sub phase 1
+
+commit naming convention:
+eg. 1.1.1 login-validation debugged
+version-number feature-name {action} 
+
+------------------------------------------------------
+
+
+Project phases:
+
+1. chats
+2. media posts
+3. confessions
+4. smash or pass
+
+
+Phase 1:
+
+login/signup
+chats home
+create chat
+
+
+sub phase 1:
+
+1.login
+backend:
+-vsit email id
+-email verification
+frontend:
+-logout page
+-login page
+-signup page
+-Accounts page (reset pw page)
