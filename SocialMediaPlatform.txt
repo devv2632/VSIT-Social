@@ -1,0 +1,58 @@
+Django: Social Media Platform
+
+Overview:
+0.main feats: anonymous confessions, swipe left or right, chats, media or threads posting 
+1.accounts(login, creation, logout)
+-can login using only vidyalankar email id
+-email verification
+-take info eg. div, rollno, name, year, dept
+2.home page
+-chats
+-posts
+-anonymous threads (like confessions)
+-swipe left or right
+3.Account
+-pfp
+-status
+-div, dept, year
+-friends request
+-friends(followers , following)
+4.chats
+-direct messaging
+-group texting
+-automatic div groups
+-automatic year groups
+-automatic dept groups
+5.smash or pass
+-swipe left to not talk | right to talk if both swipe right then start a chat saying hi.
+-send recommendations by checking dissimilarities or ask for filters by div , year , dept etc
+6.confessions
+-anonymous texting
+-only text
+-no acc details
+-no comments 
+-likes, dislikes
+- 1 confession/day 
+-deletes itself after a week
+7.posts
+-photo or media posting 
+-will show to only friends(depends on preference)
+- save all photos or media to the acc
+- comments , likes , dislikes
+
+Project phases:
+
+1. chats
+2. media posts
+3. confessions
+4. smash or pass
+
+
+
+
+
+
+
+
+
+
