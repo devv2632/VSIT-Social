@@ -24,7 +24,7 @@ def signup_view(request):
                 div=form.cleaned_data.get('div')
             )
             login(request, user)
-            return redirect('home')
+            return redirect('')
     else:
         form = signup_form()
     return render(request, 'signup.html', {'form': form})
