@@ -42,3 +42,10 @@ def signup_view(request):
     else:
         form = signup_form()
     return render(request, 'signup.html', {'form': form})
+
+def logout_view(request):
+    if not request.user.is_authenticated:
+        return redirect('')
+    else:
+        logout(request)
+        return redirect('')
