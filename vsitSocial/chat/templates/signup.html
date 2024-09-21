@@ -5,10 +5,21 @@ SignUp
 {%endblock%}
 
 {%block content%}
-<h2>Sign Up</h2>
+<h2>Sign Up - VSIT Social</h2>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        <label for="username">Username:</label>
+        <input type="text" name="username" required><br>
+        <a href='check_username/'>Check Availibility<a>
+        <br>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required><br>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br>
+        <br>
         <button type="submit">Sign Up</button>
     </form>
+    <a href={% url 'login'%}>Login</a>
 {%endblock%}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} Check Username {% endblock %}
+
+{% block content %}
+<h2>Check Username - VSIT Social</h2>
+<form method="post">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" name="username" required><br>
+    <br>
+    <button type="submit">Check</button>
+    {% if messages%}
+        {% for message in messages%}
+        <br>    
+        {{ message }}
+        <br>
+        {% endfor %}
+    {% endif %}
+</form>
+<br>
+<hr>
+
+<a href={% url 'signup'%}>Go Back</a>
+<a href={% url 'login'%}>Login</a>
+{% endblock %}
