@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %} Create Confession {% endblock title %} 
+
+{% block content %}
+{% include "navbar.html" %}
+{% include "messages.html" %}
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg border-0 rounded">
+        <div class="card-header bg-primary text-white">
+          <h1 class="text-center">Create Confession</h1>
+        </div>
+        <div class="card-body">
+          <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="confession">Confession:</label>
+              <textarea id="confession" name="confess" rows="5" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Create</button>
+            <a href="{% url 'account_info'%}" class="btn btn-primary btn-block">Cancel</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
