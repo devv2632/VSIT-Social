@@ -11,6 +11,6 @@ urlpatterns = [
     path('home/account/' ,views.account_info ,name='account_info'),
     path('home/account/update/' ,views.update_account ,name='update_account'),
     path('logout/', views.logout_view, name='logout'),
-    path('home/account/forgot_password/', views.forgot_password, name='forgot_password')
-    
+    path('home/account/forgot_password/', views.forgot_password, name='forgot_password'),
+    path('home/chat', views.chat, name='chat')
 ]

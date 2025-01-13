@@ -1,5 +1,5 @@
 from django.shortcuts import render , redirect
-from .models import Confessions
+from .models import Confessions, Chat
 from django.contrib.auth import login , logout , authenticate
 from django.http import Http404
 from django.contrib.auth.models import User
@@ -101,3 +101,36 @@ def forgot_password(request):
             messages.error(request, 'Invalid previous password.')
 
     return render(request, 'forgot_password.html')
+
+def chat(request):
+    user = request.user  # Get the currently logged-in user
+
+    if request.method == 'POST':
+        
+        username = request.POST.get('create_chat')
+        try:
+            user2 = User.objects.get(username=username)
+        except User.DoesNotExist:
+            return render(request, 'login.html', {'error': 'User not found.'})  # Handle missing user
+
+        # Check if a chat already exists between these users
+        existing_chat = Chat.objects.filter(participants=user).filter(participants=user2)
+        if existing_chat.exists():
+            user_chats = user.chats.all()
+            context = {'user_chats': user_chats}  # Update context with existing chat
+            return render(request, 'chat.html', context)  # Render chat template
+        try:
+            chat = Chat.objects.create()
+            chat.participants.add(user, user2)
+            context = {'chat': chat}  # Update context with new chat
+        except Exception as e:  # Handle any chat creation errors
+            print(f"Error creating chat: {e}")
+        return render(request, 'chat.html', context)
+
+    else:
+        # Handle non-POST requests (e.g., display user chats)
+        user_chats = user.chats.all()
+        context = {'user_chats': user_chats}
+        return render(request, 'chat.html', context)
+    
+    
